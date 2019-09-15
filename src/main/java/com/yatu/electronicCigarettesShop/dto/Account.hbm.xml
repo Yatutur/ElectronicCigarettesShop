@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Aug 23, 2019, 11:50:00 PM by Hibernate Tools 5.2.12.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="electroniccigarettes" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.yatu.electronicCigarettesShop.dto.Account" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="account">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property generated="never" lazy="false" name="userName" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="User_Name" not-null="true" unique="true"/>
+        </property>
+        <property generated="never" lazy="false" name="active" optimistic-lock="true" type="boolean" unique="false">
+            <column name="Active" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="password" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="Password" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="userRole" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="User_Role" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

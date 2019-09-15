@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Aug 23, 2019, 11:50:00 PM by Hibernate Tools 5.2.12.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="electroniccigarettes" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.yatu.electronicCigarettesShop.dto.ProductDTO" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="product">
+        <id name="id" type="int">
+            <column name="id"/>
+            <generator class="assigned"/>
+        </id>
+        <property generated="never" lazy="false" name="createDate" optimistic-lock="true" type="timestamp" unique="false">
+            <column length="19" name="Create_Date" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="image" optimistic-lock="true" type="binary" unique="false">
+            <column name="Image"/>
+        </property>
+        <property generated="never" lazy="false" name="name" optimistic-lock="true" type="string" unique="false">
+            <column name="Name" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="price" optimistic-lock="true" type="double" unique="false">
+            <column name="Price" not-null="true" precision="22" scale="0"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="orderDetailses" optimistic-lock="true" sort="unsorted" table="order_details">
+            <key on-delete="noaction">
+                <column name="product_id" not-null="true"/>
+            </key>
+            <one-to-many class="com.yatu.electronicCigarettesShop.dto.OrderDetails" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>
